@@ -26,10 +26,7 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 		// Feedback for the end user
 		$html .= "<pre>{$cmd}</pre>";
 	}
-	else {
-		// Ops. Let the user name theres a mistake
-		$html .= '<pre>ERROR: You have entered an invalid IP.</pre>';
-	}
+
 }
 
 // Generate Anti-CSRF token
