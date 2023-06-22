@@ -12,19 +12,19 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 
    		echo "L'adresse fournie est une adresse IPv4 valide";
 		$safe_target = $target;
-		
-		// Determine OS and execute the ping command.
-		if( stristr( php_uname( 's' ), 'Windows NT' ) ) {
-			// Windows
-			$cmd = shell_exec( 'ping  ' . $safe_target );
+
+		## composer require geerlingguy/ping
+		ping = new \JJG\Ping($safe_target);
+
+		$latency = $ping->ping();
+		if ($latency !== false) {
+		  $result = 'Latency is ' . $latency . ' ms';
 		}
 		else {
-			// *nix
-			$cmd = shell_exec( 'ping  -c 4 ' . $safe_target );
+		  $result = 'Host could not be reached.';
 		}
-
 		// Feedback for the end user
-		$html .= "<pre>{$cmd}</pre>";
+		$html .= "<pre>{$result}</pre>";
 		
 	} else {
 	    	echo "L'adresse fournie n'est pas une adresse IPv4 valide";
