@@ -9,22 +9,25 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 	$target = stripslashes( $target );
 
 	if(filter_var($target, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
-    		echo "L'adresse ".$target." est une adresse IPv4 valide";
-	} else {
-   		 echo "L'adresse ".$target." n'est pas une adresse IPv4 valide";
 
+   		echo "L'adresse fournie est une adresse IPv4 valide";
+		$safe_target = $target;
+		
 		// Determine OS and execute the ping command.
 		if( stristr( php_uname( 's' ), 'Windows NT' ) ) {
 			// Windows
-			$cmd = shell_exec( 'ping  ' . $target );
+			$cmd = shell_exec( 'ping  ' . $safe_target );
 		}
 		else {
 			// *nix
-			$cmd = shell_exec( 'ping  -c 4 ' . $target );
+			$cmd = shell_exec( 'ping  -c 4 ' . $safe_target );
 		}
 
 		// Feedback for the end user
 		$html .= "<pre>{$cmd}</pre>";
+		
+	} else {
+	    	echo "L'adresse fournie n'est pas une adresse IPv4 valide";
 	}
 
 }
