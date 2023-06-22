@@ -10,7 +10,7 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 
 	if(filter_var($target, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
 
-   		echo "L'adresse fournie est une adresse IPv4 valide";
+   		// echo "L'adresse fournie est une adresse IPv4 valide";
 		$safe_target = $target;
 
 		## composer require geerlingguy/ping
@@ -23,12 +23,14 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 		else {
 		  $result = 'Host could not be reached.';
 		}
-		// Feedback for the end user
-		$html .= "<pre>{$result}</pre>";
+
 		
 	} else {
-	    	echo "L'adresse fournie n'est pas une adresse IPv4 valide";
+	    	$result = "L \'adresse fournie n'est pas une adresse IPv4 valide";
 	}
+
+        // Feedback for the end user
+	$html .= "<pre>{$result}</pre>";
 
 }
 
