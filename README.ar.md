@@ -8,7 +8,7 @@
 
 ## تحذير!
 
-إن  Damn Vulnerable Web Application (DVWA) ضعيف للغاية أمنياً! **لا تضعه في مجلد html العام في الاستضافة الخاصة بك أو الخوادم التي تعمل على الانترنت** ، إذ أنه سيتم اختراقها. يُوصى باستخدام كيان افتراضي (مثل [VirtualBox] (https://www.virtualbox.org/)  أو [VMware] (https://www.vmware.com/)) ، ويتم تعيينه على وضع شبكة NAT، يمكنك تنزيل وتثبيت [XAMPP] (https://www.apachefriends.org/en/xampp.html) لخادم الويب وقاعدة البيانات.
+إن  Damn Vulnerable Web Application (DVWA) ضعيف للغاية أمنياً! **لا تضعه في مجلد html العام في الاستضافة الخاصة بك أو الخوادم التي تعمل على الانترنت** ، إذ أنه سيتم اختراقها. يُوصى باستخدام كيان افتراضي (مثل [VirtualBox] (https://www.virtualbox.org/)  أو [VMware] (https://www.vmware.com/)) ، ويتم تعيينه على وضع شبكة NAT، يمكنك تنزيل وتثبيت [XAMPP] (https://www.apachefriends.org/) لخادم الويب وقاعدة البيانات.
 
 
 ### إخلاء مسؤولية
@@ -71,12 +71,12 @@ git clone https://github.com/digininja/DVWA.git
 
 ### تثبيت Windows + XAMPP
 
-أسهل طريقة لتثبيت DVWA هي تحميل [XAMPP] وتثبيته (https://www.apachefriends.org/en/xampp.html) إذا لم يكن لديك خادم الويب جاهز ومعد مسبقاً.
+أسهل طريقة لتثبيت DVWA هي تحميل [XAMPP] وتثبيته (https://www.apachefriends.org/) إذا لم يكن لديك خادم الويب جاهز ومعد مسبقاً.
 
 يعد XAMPP  وسيلة سهلة لتثبيت Apache Distribution في أنظمة Linux و Solaris و Windows و Mac OS X. تتضمن الحزمة خادم الويب Apache و MySQL و PHP و Perl وخادم FTP و phpMyAdmin.
 
 يمكن تحميل XAMPP من هنا:
-<https://www.apachefriends.org/en/xampp.html>
+<https://www.apachefriends.org/>
 
 ببساطة قم بفك ضغط dvwa.zip ، ضع الملفات التي تم فك ضغطها في مجلد html العام ، ثم اطلب العنوان التالي من المتصفح: `http://127.0.0.1/dvwa/setup.php`
 
@@ -403,8 +403,6 @@ $_DVWA["SQLITE_DB"] = "sqli.db";
 - - -
 
 ## روابط
-
-الصفحة الرئيسية: <https://dvwa.co.uk/>
 
 الصفحة الرئيسية للمشروع: <https://github.com/digininja/DVWA>
 

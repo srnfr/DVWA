@@ -3,7 +3,7 @@
 define( 'DVWA_WEB_PAGE_TO_ROOT', '' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
-dvwaPageStartup( array( 'phpids' ) );
+dvwaPageStartup( array( ) );
 
 $page = dvwaPageNewGrab();
 $page[ 'title' ]   = 'Setup' . $page[ 'title_separator' ].$page[ 'title' ];
@@ -63,10 +63,9 @@ $page[ 'body' ] .= "
 	<br />
 	PHP version: <em>" . phpversion() . "</em><br />
 	{$phpDisplayErrors}<br />
-	{$phpSafeMode}<br/ >
+	{$phpDisplayStartupErrors}<br />
 	{$phpURLInclude}<br/ >
 	{$phpURLFopen}<br />
-	{$phpMagicQuotes}<br />
 	{$phpGD}<br />
 	{$phpMySQL}<br />
 	{$phpPDO}<br />
@@ -81,10 +80,8 @@ $page[ 'body' ] .= "
 	{$DVWARecaptcha}<br />
 	<br />
 	{$DVWAUploadsWrite}<br />
-	{$DVWAPHPWrite}<br />
-	<br />
-	<br />
 	{$bakWritable}
+	<br />
 	<br />
 	<i><span class=\"failure\">Status in red</span>, indicate there will be an issue when trying to complete some modules.</i><br />
 	<br />

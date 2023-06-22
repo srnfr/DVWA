@@ -3,8 +3,6 @@
 config/config.inc.php.bak
 config/config.inc.php
 
-Dockerfile
-
 # Vim swap files
 .*swp
 
@@ -13,3 +11,6 @@ Dockerfile
 
 # Used by pytest
 tests/__pycache__/
+
+# Don't include any uploaded images
+hackable/uploads/*
